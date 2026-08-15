@@ -1,0 +1,1879 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indian Independence Day - 15 August</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  --saffron: #FF9933;
+  --white: #FFFFFF;
+  --green: #138808;
+  --navy: #000080;
+  --dark: #1a1a2e;
+  --gold: #FFD700;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #000;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+.presentation {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+/* ── SLIDE BASE ── */
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  overflow: hidden;
+}
+.slide.active { display: flex; flex-direction: column; }
+
+/* ── NAVIGATION ── */
+.nav {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 1000;
+  background: rgba(0,0,0,0.5);
+  padding: 10px 24px;
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+}
+
+.nav button {
+  background: var(--saffron);
+  color: #fff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+.nav button:hover { transform: scale(1.05); opacity: 0.9; }
+.nav button.green-btn { background: var(--green); }
+
+.slide-counter {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  min-width: 60px;
+  text-align: center;
+}
+
+/* ── PROGRESS BAR ── */
+.progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--saffron), var(--white), var(--green));
+  transition: width 0.4s ease;
+  z-index: 1001;
+}
+
+/* ══════════════════════════════════════
+   SLIDE 1 — TITLE
+══════════════════════════════════════ */
+#slide1 {
+  background: linear-gradient(135deg, #0d0d2b 0%, #1a1a4e 50%, #0a2e0a 100%);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.confetti-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 14px;
+  top: -20px;
+  animation: confettiFall linear infinite;
+  border-radius: 2px;
+}
+
+@keyframes confettiFall {
+  0%   { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}
+
+.flag-svg-wrap {
+  margin-bottom: 30px;
+  animation: flagWave 0s ease-in-out infinite;
+  filter: drop-shadow(0 0 30px rgba(255,153,51,0.5));
+}
+
+@keyframes flagWave {
+  0%,100% { transform: rotate(-1deg) scale(1); }
+  50%      { transform: rotate(1deg) scale(1.02); }
+}
+
+.slide1-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 5vw, 72px);
+  font-weight: 900;
+  color: var(--gold);
+  text-shadow: 0 0 40px rgba(255,215,0,0.5);
+  animation: fadeSlideUp 1s 0.3s both;
+  line-height: 1.1;
+}
+
+.slide1-sub {
+  font-size: clamp(16px, 2vw, 24px);
+  color: #ccc;
+  margin-top: 12px;
+  animation: fadeSlideUp 1s 0.6s both;
+}
+
+.slide1-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--saffron), var(--gold));
+  color: #000;
+  font-weight: 700;
+  font-size: clamp(14px, 1.5vw, 18px);
+  padding: 8px 28px;
+  border-radius: 50px;
+  margin-top: 20px;
+  animation: fadeSlideUp 1s 0.9s both;
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ══════════════════════════════════════
+   SLIDE 2 — ROAD TO INDEPENDENCE
+══════════════════════════════════════ */
+#slide2 {
+  background: linear-gradient(160deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+  padding: 40px 60px 80px;
+  justify-content: flex-start;
+}
+
+.slide-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3.5vw, 48px);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 10px;
+  animation: fadeSlideUp 0.8s both;
+}
+
+.heading-saffron { color: var(--saffron); }
+.heading-green   { color: #4CAF50; }
+.heading-gold    { color: var(--gold); }
+.heading-white   { color: #fff; }
+
+.slide-divider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--saffron), var(--green));
+  border-radius: 2px;
+  margin: 0 auto 30px;
+  animation: expandWidth 0.8s 0.3s both;
+}
+@keyframes expandWidth {
+  from { width: 0; }
+  to   { width: 80px; }
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  opacity: 0;
+  animation: fadeSlideUp 0.6s forwards;
+}
+
+.tl-year {
+  background: var(--saffron);
+  color: #000;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  min-width: 70px;
+  text-align: center;
+}
+
+.tl-line {
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--saffron), var(--green));
+  flex-shrink: 0;
+}
+
+.tl-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+  box-shadow: 0 0 8px var(--gold);
+}
+
+.tl-content {
+  background: rgba(255,255,255,0.07);
+  border-left: 3px solid var(--saffron);
+  padding: 10px 16px;
+  border-radius: 8px;
+  flex: 1;
+}
+
+.tl-content strong {
+  color: var(--saffron);
+  font-size: 14px;
+  display: block;
+}
+
+.tl-content p {
+  color: #ccc;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+/* ══════════════════════════════════════
+   SLIDE 3 — FREEDOM FIGHTERS
+══════════════════════════════════════ */
+#slide3 {
+  background: linear-gradient(135deg, #0d1b0d 0%, #0d2b0d 100%);
+  padding: 36px 40px 80px;
+  justify-content: flex-start;
+}
+
+.fighters-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.fighter-card {
+  perspective: 600px;
+  cursor: pointer;
+  height: 200px;
+}
+
+.fighter-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease;
+  border-radius: 14px;
+}
+
+.fighter-card:hover .fighter-inner,
+.fighter-card.flipped .fighter-inner {
+  transform: rotateY(180deg);
+}
+
+.fighter-front, .fighter-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 10px;
+  text-align: center;
+}
+
+.fighter-front {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.fighter-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin-bottom: 10px;
+  border: 2px solid var(--gold);
+}
+
+.fighter-front h3 {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.fighter-front span {
+  color: #aaa;
+  font-size: 10px;
+  margin-top: 4px;
+}
+
+.fighter-back {
+  background: linear-gradient(135deg, var(--saffron), var(--green));
+  transform: rotateY(180deg);
+}
+
+.fighter-back blockquote {
+  font-size: 11px;
+  color: #fff;
+  font-style: italic;
+  line-height: 1.5;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.fighter-back cite {
+  display: block;
+  font-size: 10px;
+  color: rgba(255,255,255,0.8);
+  margin-top: 8px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* ══════════════════════════════════════
+   SLIDE 3b — MAP THEN VS NOW
+══════════════════════════════════════ */
+#slide3b {
+  background: linear-gradient(160deg, #0a1a2e 0%, #0d2b1a 100%);
+  padding: 32px 40px 80px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.map-compare-wrap {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1040px;
+  margin-top: 8px;
+}
+
+.map-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  animation: fadeSlideUp 0.7s forwards;
+}
+
+.map-panel-label {
+  display: inline-block;
+  padding: 5px 22px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.label-then { background: rgba(255,100,100,0.2); color: #ff8888; border: 1px solid #ff6666; }
+.label-now  { background: rgba(19,136,8,0.2);    color: #66dd66; border: 1px solid var(--green); }
+
+.map-panel svg { filter: drop-shadow(0 4px 20px rgba(0,0,0,0.5)); }
+
+.map-vs-divider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 60px;
+}
+
+.vs-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--saffron), var(--green));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 18px;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(255,153,51,0.4);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.map-legend {
+  width: 100%;
+  max-width: 1040px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 14px;
+  animation: fadeSlideUp 0.7s 0.8s both;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-size: 11.5px;
+  color: #ccc;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════
+   SLIDE 4 — MIDNIGHT SPEECH
+══════════════════════════════════════ */
+#slide4 {
+  background: radial-gradient(ellipse at center, #0d0d1a 0%, #000 100%);
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+  text-align: center;
+}
+
+.speech-stars {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  animation: twinkle ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%,100% { opacity: 0.2; transform: scale(1); }
+  50%      { opacity: 1;   transform: scale(1.4); }
+}
+
+.speech-quote-wrap {
+  max-width: 780px;
+  z-index: 2;
+  animation: fadeSlideUp 1s 0.4s both;
+}
+
+.speech-icon {
+  font-size: 60px;
+  color: var(--gold);
+  opacity: 0.4;
+  line-height: 1;
+  margin-bottom: -10px;
+}
+
+.speech-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(16px, 2.2vw, 30px);
+  color: var(--white);
+  line-height: 1.6;
+  font-style: italic;
+  text-shadow: 0 0 30px rgba(255,215,0,0.2);
+}
+
+.speech-quote .highlight {
+  color: var(--gold);
+  font-weight: 700;
+  font-style: normal;
+}
+
+.speech-speaker {
+  margin-top: 30px;
+  display: inline-block;
+  border-top: 2px solid var(--saffron);
+  padding-top: 12px;
+  color: var(--saffron);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.speech-date {
+  color: #888;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* ══════════════════════════════════════
+   SLIDE 5 — INTERESTING FACTS
+══════════════════════════════════════ */
+#slide5 {
+  background: linear-gradient(135deg, #1a0a00 0%, #2d1500 50%, #001a0a 100%);
+  padding: 36px 50px 80px;
+  justify-content: flex-start;
+}
+
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.fact-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,153,51,0.3);
+  border-radius: 12px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  opacity: 0;
+  animation: fadeSlideUp 0.5s forwards;
+}
+
+.fact-num {
+  background: linear-gradient(135deg, var(--saffron), var(--gold));
+  color: #000;
+  font-weight: 800;
+  font-size: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.fact-text strong {
+  color: var(--saffron);
+  font-size: 13px;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.fact-text p {
+  color: #ccc;
+  font-size: 11.5px;
+  line-height: 1.5;
+}
+
+/* ══════════════════════════════════════
+   SLIDE 6 — THE FLAG
+══════════════════════════════════════ */
+#slide6 {
+  background: linear-gradient(160deg, #0d0d2b 0%, #1a1a3e 100%);
+  padding: 36px 60px 80px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flag-section {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  max-width: 950px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.flag-display {
+  flex-shrink: 0;
+  animation: gentleFloat 3s ease-in-out infinite;
+}
+
+@keyframes gentleFloat {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+
+.flag-callouts {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.callout {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  opacity: 0;
+  animation: fadeSlideUp 0.6s forwards;
+}
+
+.callout-saffron { background: rgba(255,153,51,0.15); border-left: 4px solid var(--saffron); }
+.callout-white   { background: rgba(255,255,255,0.08); border-left: 4px solid #ccc; }
+.callout-green   { background: rgba(19,136,8,0.15);   border-left: 4px solid var(--green); }
+.callout-navy    { background: rgba(0,0,128,0.2);      border-left: 4px solid #6699ff; }
+
+.callout-color {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 2px solid rgba(255,255,255,0.3);
+}
+
+.callout-text strong {
+  font-size: 13px;
+  display: block;
+  color: #fff;
+}
+.callout-text p {
+  font-size: 11.5px;
+  color: #bbb;
+  margin-top: 2px;
+}
+
+/* ══════════════════════════════════════
+   SLIDE 7 — THEN VS NOW
+══════════════════════════════════════ */
+#slide7 {
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 100%);
+  padding: 36px 50px 80px;
+  justify-content: flex-start;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.comp-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  padding: 18px 20px;
+  opacity: 0;
+  animation: fadeSlideUp 0.6s forwards;
+}
+
+.comp-card h3 {
+  font-size: 13px;
+  color: var(--gold);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.comp-stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.comp-label {
+  color: #aaa;
+  font-size: 11px;
+}
+
+.comp-values {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.then-val {
+  color: #ff6666;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.arrow-right { color: #888; font-size: 12px; }
+
+.now-val {
+  color: #66ff88;
+  font-size: 13px;
+  font-weight: 700;
+  counter-reset: num;
+}
+
+.comp-bar-wrap {
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+  height: 6px;
+  margin-top: 6px;
+  overflow: hidden;
+}
+
+.comp-bar {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--saffron), var(--green));
+  width: 0;
+  animation: growBar 1.5s 0.8s ease forwards;
+}
+
+@keyframes growBar {
+  to { width: var(--bar-width); }
+}
+
+/* ══════════════════════════════════════
+   SLIDE 8 — ACHIEVEMENTS
+══════════════════════════════════════ */
+#slide8 {
+  background: linear-gradient(160deg, #001a0a 0%, #0a1a00 100%);
+  padding: 36px 50px 80px;
+  justify-content: flex-start;
+}
+
+.achieve-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.achieve-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(19,136,8,0.3);
+  border-radius: 14px;
+  padding: 20px 16px;
+  text-align: center;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: popIn 0.5s forwards;
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.7); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.achieve-icon {
+  font-size: 38px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 8px rgba(255,153,51,0.5));
+}
+
+.achieve-card h3 {
+  color: var(--saffron);
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.achieve-card p {
+  color: #bbb;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* ══════════════════════════════════════
+   SLIDE 9 — UNITY IN DIVERSITY
+══════════════════════════════════════ */
+#slide9 {
+  background: radial-gradient(ellipse at center, #1a0a2e 0%, #0a0a1a 100%);
+  padding: 36px 50px 80px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.unity-subtitle {
+  text-align: center;
+  color: #aaa;
+  font-size: 14px;
+  margin-bottom: 24px;
+  animation: fadeSlideUp 0.8s 0.3s both;
+}
+
+.diversity-mosaic {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  max-width: 900px;
+  width: 100%;
+}
+
+.div-tile {
+  border-radius: 14px;
+  padding: 18px 14px;
+  text-align: center;
+  opacity: 0;
+  animation: fadeSlideUp 0.5s forwards;
+  cursor: default;
+  transition: transform 0.3s;
+}
+.div-tile:hover { transform: translateY(-4px) scale(1.03); }
+
+.div-tile-saffron { background: linear-gradient(135deg, rgba(255,153,51,0.2), rgba(255,153,51,0.05)); border: 1px solid rgba(255,153,51,0.4); }
+.div-tile-green   { background: linear-gradient(135deg, rgba(19,136,8,0.2),   rgba(19,136,8,0.05));   border: 1px solid rgba(19,136,8,0.4); }
+.div-tile-blue    { background: linear-gradient(135deg, rgba(0,100,200,0.2),  rgba(0,100,200,0.05));  border: 1px solid rgba(0,150,255,0.3); }
+.div-tile-gold    { background: linear-gradient(135deg, rgba(255,215,0,0.15), rgba(255,215,0,0.03));  border: 1px solid rgba(255,215,0,0.3); }
+
+.div-tile .tile-icon { font-size: 32px; margin-bottom: 8px; }
+.div-tile h3 { color: var(--gold); font-size: 13px; font-weight: 700; margin-bottom: 5px; }
+.div-tile p  { color: #bbb; font-size: 11px; line-height: 1.5; }
+
+/* ══════════════════════════════════════
+   SLIDE 10 — CLOSING
+══════════════════════════════════════ */
+#slide10 {
+  background: radial-gradient(ellipse at center, #0d0d2b 0%, #000 100%);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px;
+}
+
+.fireworks-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.pledge-wrap {
+  z-index: 2;
+  max-width: 800px;
+  animation: fadeSlideUp 1s 0.3s both;
+}
+
+.pledge-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(20px, 3vw, 42px);
+  color: var(--gold);
+  font-weight: 900;
+  margin-bottom: 20px;
+  text-shadow: 0 0 20px rgba(255,215,0,0.4);
+}
+
+.pledge-box {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,215,0,0.3);
+  border-radius: 14px;
+  padding: 24px 30px;
+  margin-bottom: 24px;
+}
+
+.pledge-box p {
+  color: #ddd;
+  font-size: clamp(11px, 1.2vw, 15px);
+  line-height: 1.8;
+  font-style: italic;
+}
+
+.lang-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.lang-badge {
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  animation: popIn 0.4s forwards;
+  opacity: 0;
+}
+
+.lang-badge:nth-child(odd)  { background: rgba(255,153,51,0.2); color: var(--saffron); border: 1px solid var(--saffron); }
+.lang-badge:nth-child(even) { background: rgba(19,136,8,0.2);   color: #4CAF50;        border: 1px solid var(--green); }
+
+.jai-hind {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 5vw, 70px);
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--saffron) 33%, var(--white) 33% 66%, var(--green) 66%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: pulse 2s ease-in-out infinite;
+  text-shadow: none;
+}
+
+@keyframes pulse {
+  0%,100% { transform: scale(1); }
+  50%      { transform: scale(1.04); }
+}
+
+</style>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+
+<div class="presentation" id="presentation">
+
+<!-- ══════════════ SLIDE 1 ══════════════ -->
+<div class="slide active" id="slide1">
+  <div class="confetti-container" id="confetti"></div>
+  <div class="flag-svg-wrap">
+    <svg width="220" height="146" viewBox="0 0 220 146" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- One spoke: from centre (0,0) pointing up to rim at r=20 -->
+        <line id="spoke1" x1="0" y1="-4" x2="0" y2="-20" stroke="#000080" stroke-width="1.1" stroke-linecap="round"/>
+      </defs>
+      <rect x="10" y="0"  width="200" height="48" fill="#FF9933"/>
+      <rect x="10" y="48" width="200" height="50" fill="#FFFFFF"/>
+      <rect x="10" y="98" width="200" height="48" fill="#138808"/>
+      <!-- Ashoka Chakra: outer ring -->
+      <circle cx="110" cy="73" r="21" fill="none" stroke="#000080" stroke-width="2"/>
+      <!-- inner hub circle -->
+      <circle cx="110" cy="73" r="3.5" fill="#000080"/>
+      <!-- 24 evenly-spaced spokes at 15° each -->
+      <g transform="translate(110,73)">
+        <use href="#spoke1" transform="rotate(0)"/>
+        <use href="#spoke1" transform="rotate(15)"/>
+        <use href="#spoke1" transform="rotate(30)"/>
+        <use href="#spoke1" transform="rotate(45)"/>
+        <use href="#spoke1" transform="rotate(60)"/>
+        <use href="#spoke1" transform="rotate(75)"/>
+        <use href="#spoke1" transform="rotate(90)"/>
+        <use href="#spoke1" transform="rotate(105)"/>
+        <use href="#spoke1" transform="rotate(120)"/>
+        <use href="#spoke1" transform="rotate(135)"/>
+        <use href="#spoke1" transform="rotate(150)"/>
+        <use href="#spoke1" transform="rotate(165)"/>
+        <use href="#spoke1" transform="rotate(180)"/>
+        <use href="#spoke1" transform="rotate(195)"/>
+        <use href="#spoke1" transform="rotate(210)"/>
+        <use href="#spoke1" transform="rotate(225)"/>
+        <use href="#spoke1" transform="rotate(240)"/>
+        <use href="#spoke1" transform="rotate(255)"/>
+        <use href="#spoke1" transform="rotate(270)"/>
+        <use href="#spoke1" transform="rotate(285)"/>
+        <use href="#spoke1" transform="rotate(300)"/>
+        <use href="#spoke1" transform="rotate(315)"/>
+        <use href="#spoke1" transform="rotate(330)"/>
+        <use href="#spoke1" transform="rotate(345)"/>
+      </g>
+      <!-- Flagpole -->
+      <line x1="10" y1="0" x2="10" y2="146" stroke="#8B4513" stroke-width="6"/>
+    </svg>
+  </div>
+  <h1 class="slide1-title">Celebrating Indian<br>Independence Day</h1>
+  <p class="slide1-sub">15 August 1947 — The Dawn of a New Nation</p>
+  <span class="slide1-badge">🇮🇳 78 Years of Freedom &nbsp;|&nbsp; Jai Hind!</span>
+</div>
+
+<!-- ══════════════ SLIDE 2 ══════════════ -->
+<div class="slide" id="slide2">
+  <h2 class="slide-heading heading-saffron">The Road to Independence</h2>
+  <div class="slide-divider"></div>
+  <div class="timeline">
+    <div class="timeline-item" style="animation-delay:0.1s">
+      <span class="tl-year">1857</span>
+      <div class="tl-line"></div><div class="tl-dot"></div>
+      <div class="tl-content"><strong>First War of Independence</strong><p>The Sepoy Mutiny — India's first organized uprising against British rule, sparked in Meerut.</p></div>
+    </div>
+    <div class="timeline-item" style="animation-delay:0.25s">
+      <span class="tl-year">1885</span>
+      <div class="tl-line"></div><div class="tl-dot"></div>
+      <div class="tl-content"><strong>Indian National Congress Founded</strong><p>A.O. Hume founded the INC, giving Indians a political platform to demand rights.</p></div>
+    </div>
+    <div class="timeline-item" style="animation-delay:0.4s">
+      <span class="tl-year">1919</span>
+      <div class="tl-line"></div><div class="tl-dot"></div>
+      <div class="tl-content"><strong>Jallianwala Bagh Massacre</strong><p>British troops fired on unarmed civilians in Amritsar — a turning point that galvanised the nation.</p></div>
+    </div>
+    <div class="timeline-item" style="animation-delay:0.55s">
+      <span class="tl-year">1920</span>
+      <div class="tl-line"></div><div class="tl-dot"></div>
+      <div class="tl-content"><strong>Non-Cooperation Movement</strong><p>Gandhi launched nationwide civil disobedience, urging Indians to boycott British goods and institutions.</p></div>
+    </div>
+    <div class="timeline-item" style="animation-delay:0.7s">
+      <span class="tl-year">1930</span>
+      <div class="tl-line"></div><div class="tl-dot"></div>
+      <div class="tl-content"><strong>Salt March (Dandi March)</strong><p>Gandhi's 241-mile march to produce salt from the sea defied the British Salt Tax and became iconic worldwide.</p></div>
+    </div>
+    <div class="timeline-item" style="animation-delay:0.85s">
+      <span class="tl-year">1942</span>
+      <div class="tl-line"></div><div class="tl-dot"></div>
+      <div class="tl-content"><strong>Quit India Movement</strong><p>"Do or Die" — Gandhi demanded an immediate end to British rule; thousands were arrested.</p></div>
+    </div>
+    <div class="timeline-item" style="animation-delay:1s">
+      <span class="tl-year">1947</span>
+      <div class="tl-line"></div><div class="tl-dot"></div>
+      <div class="tl-content"><strong>🎉 Independence!</strong><p>At midnight on 14–15 August, India became free after nearly 200 years of British colonial rule.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ SLIDE 3 ══════════════ -->
+<div class="slide" id="slide3">
+  <h2 class="slide-heading heading-green">Heroes of the Freedom Struggle</h2>
+  <div class="slide-divider"></div>
+  <p style="text-align:center;color:#aaa;font-size:13px;margin-bottom:20px;animation:fadeSlideUp 0.6s 0.3s both;opacity:0">Hover over each card to reveal their famous quote</p>
+  <div class="fighters-grid">
+    <div class="fighter-card">
+      <div class="fighter-inner">
+        <div class="fighter-front">
+          <div class="fighter-avatar" style="background:rgba(255,153,51,0.15)">🕊️</div>
+          <h3>Mahatma Gandhi</h3>
+          <span>Father of the Nation</span>
+        </div>
+        <div class="fighter-back">
+          <blockquote>"Be the change you wish to see in the world."</blockquote>
+          <cite>— Mahatma Gandhi<br>1869–1948</cite>
+        </div>
+      </div>
+    </div>
+    <div class="fighter-card">
+      <div class="fighter-inner">
+        <div class="fighter-front">
+          <div class="fighter-avatar" style="background:rgba(255,100,0,0.15)">⚔️</div>
+          <h3>Subhas Chandra Bose</h3>
+          <span>Netaji</span>
+        </div>
+        <div class="fighter-back">
+          <blockquote>"Give me blood and I shall give you freedom!"</blockquote>
+          <cite>— Netaji S.C. Bose<br>1897–1945</cite>
+        </div>
+      </div>
+    </div>
+    <div class="fighter-card">
+      <div class="fighter-inner">
+        <div class="fighter-front">
+          <div class="fighter-avatar" style="background:rgba(255,0,0,0.15)">🔥</div>
+          <h3>Bhagat Singh</h3>
+          <span>Shaheed-e-Azam</span>
+        </div>
+        <div class="fighter-back">
+          <blockquote>"They may kill me, but they cannot kill my ideas."</blockquote>
+          <cite>— Bhagat Singh<br>1907–1931</cite>
+        </div>
+      </div>
+    </div>
+    <div class="fighter-card">
+      <div class="fighter-inner">
+        <div class="fighter-front">
+          <div class="fighter-avatar" style="background:rgba(0,180,100,0.15)">🏛️</div>
+          <h3>Sardar Patel</h3>
+          <span>Iron Man of India</span>
+        </div>
+        <div class="fighter-back">
+          <blockquote>"The mantra is: work, more work, and still more work."</blockquote>
+          <cite>— Sardar Vallabhbhai Patel<br>1875–1950</cite>
+        </div>
+      </div>
+    </div>
+    <div class="fighter-card">
+      <div class="fighter-inner">
+        <div class="fighter-front">
+          <div class="fighter-avatar" style="background:rgba(0,100,255,0.15)">📜</div>
+          <h3>B.R. Ambedkar</h3>
+          <span>Father of Constitution</span>
+        </div>
+        <div class="fighter-back">
+          <blockquote>"I measure the progress of a community by the degree of progress women have achieved."</blockquote>
+          <cite>— Dr. B.R. Ambedkar<br>1891–1956</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ SLIDE 3b — MAP THEN VS NOW ══════════════ -->
+<!-- ══════════════ SLIDE 3b — MAP THEN VS NOW ══════════════ -->
+<div class="slide" id="slide3b">
+  <h2 class="slide-heading heading-saffron">India's Political Map: Then vs Now</h2>
+  <div class="slide-divider"></div>
+  <div class="map-compare-wrap">
+    <div class="map-panel" style="animation-delay:0.2s">
+      <span class="map-panel-label label-then">&#x1F5FA; British India &mdash; 1946</span>
+      <canvas id="mapThen" width="290" height="370" style="border-radius:10px;display:block"></canvas>
+    </div>
+    <div class="map-vs-divider">
+      <div class="vs-circle">VS</div>
+      <div style="width:2px;height:80px;background:linear-gradient(to bottom,#FF9933,#138808);border-radius:2px;"></div>
+    </div>
+    <div class="map-panel" style="animation-delay:0.5s">
+      <span class="map-panel-label label-now">&#x1F5FA; Republic of India &mdash; 2024</span>
+      <canvas id="mapNow" width="290" height="370" style="border-radius:10px;display:block"></canvas>
+    </div>
+  </div>
+  <div class="map-legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#e05a20"></div>Regions partitioned into Pakistan / Bangladesh (1947)</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#FFD700"></div>562 Princely States absorbed into India</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#FF9933"></div>Republic of India (28 States + 8 UTs)</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#FFD700"></div>&#9733; Capital: New Delhi</div>
+  </div>
+</div>
+
+<div class="slide" id="slide4">
+  <div class="speech-stars" id="speechStars"></div>
+  <div class="speech-quote-wrap">
+    <div class="speech-icon">"</div>
+    <p class="speech-quote">
+      Long years ago we made a tryst with destiny, and now the time comes when we shall redeem our pledge...
+      <span class="highlight">At the stroke of the midnight hour, when the world sleeps,
+      India will awake to life and freedom.</span>
+      A moment comes, which comes but rarely in history, when we step out from the old to the new,
+      when an age ends, and when the soul of a nation, long suppressed, finds utterance.
+    </p>
+    <div class="speech-speaker">Jawaharlal Nehru — First Prime Minister of India</div>
+    <div class="speech-date">Delivered in Parliament House, New Delhi — 14 August 1947, 11:00 PM</div>
+  </div>
+</div>
+
+<!-- ══════════════ SLIDE 5 ══════════════ -->
+<div class="slide" id="slide5">
+  <h2 class="slide-heading heading-gold">Did You Know? 🤔</h2>
+  <div class="slide-divider"></div>
+  <div class="facts-grid">
+    <div class="fact-card" style="animation-delay:0.1s">
+      <div class="fact-num">1</div>
+      <div class="fact-text">
+        <strong>Midnight Independence</strong>
+        <p>India became independent at midnight because August 14 was considered auspicious by astrologers — the British formally left on August 15.</p>
+      </div>
+    </div>
+    <div class="fact-card" style="animation-delay:0.2s">
+      <div class="fact-num">2</div>
+      <div class="fact-text">
+        <strong>National Anthem Duration</strong>
+        <p>Jana Gana Mana has a full version (52 seconds) and a short version (20 seconds). It was first sung on December 27, 1911.</p>
+      </div>
+    </div>
+    <div class="fact-card" style="animation-delay:0.3s">
+      <div class="fact-num">3</div>
+      <div class="fact-text">
+        <strong>The Flag Was Hand-Woven</strong>
+        <p>By law, the Indian national flag must be made of Khadi (hand-spun fabric). Machine-made flags are illegal!</p>
+      </div>
+    </div>
+    <div class="fact-card" style="animation-delay:0.4s">
+      <div class="fact-num">4</div>
+      <div class="fact-text">
+        <strong>562 Princely States</strong>
+        <p>India was not just one country to unite — Sardar Patel negotiated the merger of 562 princely states into the Indian Union.</p>
+      </div>
+    </div>
+    <div class="fact-card" style="animation-delay:0.5s">
+      <div class="fact-num">5</div>
+      <div class="fact-text">
+        <strong>World's Largest Democracy</strong>
+        <p>India holds the world's largest democratic elections. In 2024, over 640 million people voted — more than the population of the US + EU combined!</p>
+      </div>
+    </div>
+    <div class="fact-card" style="animation-delay:0.6s">
+      <div class="fact-num">6</div>
+      <div class="fact-text">
+        <strong>Ashoka Chakra's 24 Spokes</strong>
+        <p>The 24 spokes on the flag represent the 24 hours of the day — symbolising that India never stops progressing.</p>
+      </div>
+    </div>
+    <div class="fact-card" style="animation-delay:0.7s">
+      <div class="fact-num">7</div>
+      <div class="fact-text">
+        <strong>Nehru's Iconic Rose</strong>
+        <p>Jawaharlal Nehru was known for the red rose in his buttonhole — he said it reminded him to be sensitive to people's feelings.</p>
+      </div>
+    </div>
+    <div class="fact-card" style="animation-delay:0.8s">
+      <div class="fact-num">8</div>
+      <div class="fact-text">
+        <strong>Gandhi Never Won Nobel Peace Prize</strong>
+        <p>Despite being nominated five times, Mahatma Gandhi never received the Nobel Peace Prize — something the Nobel Committee later called a regret.</p>
+      </div>
+    </div>
+    <div class="fact-card" style="animation-delay:0.9s">
+      <div class="fact-num">9</div>
+      <div class="fact-text">
+        <strong>The Constitution — Handwritten!</strong>
+        <p>India's Constitution is the world's longest written constitution. The original was hand-calligraphed by Prem Behari Raizada.</p>
+      </div>
+    </div>
+    <div class="fact-card" style="animation-delay:1s">
+      <div class="fact-num">10</div>
+      <div class="fact-text">
+        <strong>Red Fort Tradition</strong>
+        <p>Every year since 1947, India's Prime Minister hoists the national flag at Red Fort in Delhi on Independence Day and addresses the nation.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ SLIDE 6 ══════════════ -->
+<div class="slide" id="slide6">
+  <h2 class="slide-heading heading-white">The Tricolour 🇮🇳</h2>
+  <div class="slide-divider"></div>
+  <div class="flag-section">
+    <div class="flag-display">
+      <svg width="260" height="174" viewBox="0 0 260 174" xmlns="http://www.w3.org/2000/svg" style="border-radius:8px;box-shadow:0 0 40px rgba(255,153,51,0.3)">
+        <rect x="0" y="0"   width="260" height="58"  fill="#FF9933"/>
+        <rect x="0" y="58"  width="260" height="58"  fill="#FFFFFF"/>
+        <rect x="0" y="116" width="260" height="58"  fill="#138808"/>
+        <circle cx="130" cy="87" r="24" fill="none" stroke="#000080" stroke-width="3"/>
+        <circle cx="130" cy="87" r="4"  fill="#000080"/>
+        <g stroke="#000080" stroke-width="1.4" transform="translate(130,87)">
+          <line x1="0" y1="-24" x2="0" y2="24"/>
+          <line x1="-24" y1="0" x2="24" y2="0"/>
+          <line x1="-17" y1="-17" x2="17" y2="17"/>
+          <line x1="17" y1="-17" x2="-17" y2="17"/>
+          <line x1="-22" y1="-9" x2="22" y2="9"/>
+          <line x1="22" y1="-9" x2="-22" y2="9"/>
+          <line x1="-9" y1="-22" x2="9" y2="22"/>
+          <line x1="9" y1="-22" x2="-9" y2="22"/>
+        </g>
+      </svg>
+    </div>
+    <div class="flag-callouts">
+      <div class="callout callout-saffron" style="animation-delay:0.2s">
+        <div class="callout-color" style="background:#FF9933"></div>
+        <div class="callout-text">
+          <strong>🔶 Saffron (Kesari)</strong>
+          <p>Represents courage, sacrifice, and the spirit of renunciation. It reminds leaders to work selflessly.</p>
+        </div>
+      </div>
+      <div class="callout callout-white" style="animation-delay:0.4s">
+        <div class="callout-color" style="background:#FFFFFF"></div>
+        <div class="callout-text">
+          <strong>⬜ White (Shweta)</strong>
+          <p>Represents peace, truth, and purity. The Ashoka Chakra at its centre signifies progress and dharma.</p>
+        </div>
+      </div>
+      <div class="callout callout-green" style="animation-delay:0.6s">
+        <div class="callout-color" style="background:#138808"></div>
+        <div class="callout-text">
+          <strong>🟩 India Green</strong>
+          <p>Represents faith, fertility, and the auspiciousness of the land — India's nature and agriculture.</p>
+        </div>
+      </div>
+      <div class="callout callout-navy" style="animation-delay:0.8s">
+        <div class="callout-color" style="background:#000080"></div>
+        <div class="callout-text">
+          <strong>🔵 Ashoka Chakra — 24 Spokes</strong>
+          <p>The wheel of law (Dharmachakra) from the Sarnath Lion Capital of Emperor Ashoka. 24 spokes = 24 hours; life never stands still.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ SLIDE 7 ══════════════ -->
+<div class="slide" id="slide7">
+  <h2 class="slide-heading heading-saffron">India: Then vs Now 📊</h2>
+  <div class="slide-divider"></div>
+  <div class="comparison-grid">
+    <div class="comp-card" style="animation-delay:0.1s">
+      <h3>📚 Literacy Rate</h3>
+      <div class="comp-stat-row">
+        <span class="comp-label">1947 → 2024</span>
+        <div class="comp-values"><span class="then-val">12%</span><span class="arrow-right">→</span><span class="now-val">77.7%</span></div>
+      </div>
+      <div class="comp-bar-wrap"><div class="comp-bar" style="--bar-width:77.7%"></div></div>
+    </div>
+    <div class="comp-card" style="animation-delay:0.2s">
+      <h3>🌾 Life Expectancy</h3>
+      <div class="comp-stat-row">
+        <span class="comp-label">1947 → 2024</span>
+        <div class="comp-values"><span class="then-val">32 yrs</span><span class="arrow-right">→</span><span class="now-val">70 yrs</span></div>
+      </div>
+      <div class="comp-bar-wrap"><div class="comp-bar" style="--bar-width:70%"></div></div>
+    </div>
+    <div class="comp-card" style="animation-delay:0.3s">
+      <h3>💰 GDP (USD Trillion)</h3>
+      <div class="comp-stat-row">
+        <span class="comp-label">1947 → 2024</span>
+        <div class="comp-values"><span class="then-val">$0.03T</span><span class="arrow-right">→</span><span class="now-val">$3.9T</span></div>
+      </div>
+      <div class="comp-bar-wrap"><div class="comp-bar" style="--bar-width:88%"></div></div>
+    </div>
+    <div class="comp-card" style="animation-delay:0.4s">
+      <h3>🚀 Space Missions</h3>
+      <div class="comp-stat-row">
+        <span class="comp-label">1947 → 2024</span>
+        <div class="comp-values"><span class="then-val">0</span><span class="arrow-right">→</span><span class="now-val">130+</span></div>
+      </div>
+      <div class="comp-bar-wrap"><div class="comp-bar" style="--bar-width:95%"></div></div>
+    </div>
+    <div class="comp-card" style="animation-delay:0.5s">
+      <h3>📱 Internet Users</h3>
+      <div class="comp-stat-row">
+        <span class="comp-label">1995 → 2024</span>
+        <div class="comp-values"><span class="then-val">~0</span><span class="arrow-right">→</span><span class="now-val">900M+</span></div>
+      </div>
+      <div class="comp-bar-wrap"><div class="comp-bar" style="--bar-width:90%"></div></div>
+    </div>
+    <div class="comp-card" style="animation-delay:0.6s">
+      <h3>🏥 Infant Mortality (per 1000)</h3>
+      <div class="comp-stat-row">
+        <span class="comp-label">1947 → 2024</span>
+        <div class="comp-values"><span class="then-val">162</span><span class="arrow-right">→</span><span class="now-val">28</span></div>
+      </div>
+      <div class="comp-bar-wrap"><div class="comp-bar" style="--bar-width:83%;background:linear-gradient(90deg,#ff6666,#ff9933)"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ SLIDE 8 ══════════════ -->
+<div class="slide" id="slide8">
+  <h2 class="slide-heading heading-green">India's Greatest Achievements 🏆</h2>
+  <div class="slide-divider"></div>
+  <div class="achieve-grid">
+    <div class="achieve-card" style="animation-delay:0.1s">
+      <div class="achieve-icon">🚀</div>
+      <h3>Chandrayaan-3</h3>
+      <p>In 2023 India became the <strong>first country</strong> to land near the Moon's south pole — a historic ISRO achievement.</p>
+    </div>
+    <div class="achieve-card" style="animation-delay:0.2s">
+      <div class="achieve-icon">🛸</div>
+      <h3>Mars Orbiter Mission</h3>
+      <p>Mangalyaan (2014) reached Mars on its <strong>very first attempt</strong> — making India the first Asian nation to do so.</p>
+    </div>
+    <div class="achieve-card" style="animation-delay:0.3s">
+      <div class="achieve-icon">🌾</div>
+      <h3>Green Revolution</h3>
+      <p>From food-import dependence to a <strong>global food exporter</strong>. India now feeds 1.4 billion people.</p>
+    </div>
+    <div class="achieve-card" style="animation-delay:0.4s">
+      <div class="achieve-icon">💻</div>
+      <h3>IT Superpower</h3>
+      <p>India's tech industry generates <strong>over $245 billion</strong> in exports. Bangalore is Asia's Silicon Valley.</p>
+    </div>
+    <div class="achieve-card" style="animation-delay:0.5s">
+      <div class="achieve-icon">🏏</div>
+      <h3>Cricket World Champions</h3>
+      <p>India has won the ICC Cricket World Cup <strong>twice (1983, 2011)</strong> and T20 World Cup twice.</p>
+    </div>
+    <div class="achieve-card" style="animation-delay:0.6s">
+      <div class="achieve-icon">🤝</div>
+      <h3>World's Largest Democracy</h3>
+      <p>India has conducted <strong>18 general elections</strong> since 1951, each peaceful — a model for the world.</p>
+    </div>
+    <div class="achieve-card" style="animation-delay:0.7s">
+      <div class="achieve-icon">💉</div>
+      <h3>Covid Vaccine Champion</h3>
+      <p>India administered <strong>over 2.2 billion</strong> vaccine doses — supplying vaccines to 100+ nations through Vaccine Maitri.</p>
+    </div>
+    <div class="achieve-card" style="animation-delay:0.8s">
+      <div class="achieve-icon">☀️</div>
+      <h3>Renewable Energy Leader</h3>
+      <p>India ranks <strong>4th globally</strong> in renewable energy capacity. The world's largest solar park is in Rajasthan.</p>
+    </div>
+    <div class="achieve-card" style="animation-delay:0.9s">
+      <div class="achieve-icon">🎓</div>
+      <h3>IITs — Global Excellence</h3>
+      <p>Indian Institutes of Technology have produced leaders at <strong>Google, Microsoft, Adobe</strong> and countless global companies.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ SLIDE 9 ══════════════ -->
+<div class="slide" id="slide9">
+  <h2 class="slide-heading heading-gold">Unity in Diversity 🌈</h2>
+  <div class="slide-divider"></div>
+  <p class="unity-subtitle">One nation, countless cultures — India's greatest strength</p>
+  <div class="diversity-mosaic">
+    <div class="div-tile div-tile-saffron" style="animation-delay:0.1s">
+      <div class="tile-icon">🗣️</div>
+      <h3>Languages</h3>
+      <p>22 official languages, 1600+ dialects. Hindi, Tamil, Bengali, Telugu, Marathi and many more!</p>
+    </div>
+    <div class="div-tile div-tile-green" style="animation-delay:0.2s">
+      <div class="tile-icon">🕌</div>
+      <h3>Religions</h3>
+      <p>Birthplace of Hinduism, Buddhism, Jainism & Sikhism. Home to Islam, Christianity, Zoroastrianism and more.</p>
+    </div>
+    <div class="div-tile div-tile-blue" style="animation-delay:0.3s">
+      <div class="tile-icon">🎭</div>
+      <h3>Festivals</h3>
+      <p>Diwali, Eid, Christmas, Holi, Pongal, Navratri, Durga Puja — India celebrates them ALL!</p>
+    </div>
+    <div class="div-tile div-tile-gold" style="animation-delay:0.4s">
+      <div class="tile-icon">🍛</div>
+      <h3>Cuisines</h3>
+      <p>From Biryani to Dosa, Dal Baati to Momos — every region has its own flavours and traditions.</p>
+    </div>
+    <div class="div-tile div-tile-blue" style="animation-delay:0.5s">
+      <div class="tile-icon">🎵</div>
+      <h3>Classical Arts</h3>
+      <p>Bharatanatyam, Kathak, Hindustani & Carnatic music — 5000 years of artistic heritage.</p>
+    </div>
+    <div class="div-tile div-tile-saffron" style="animation-delay:0.6s">
+      <div class="tile-icon">👗</div>
+      <h3>Attire</h3>
+      <p>Saree, Kurta, Phulkari, Lungi, Dhoti — every state boasts its own vibrant traditional dress.</p>
+    </div>
+    <div class="div-tile div-tile-green" style="animation-delay:0.7s">
+      <div class="tile-icon">🏛️</div>
+      <h3>Architecture</h3>
+      <p>Taj Mahal, Hampi, Khajuraho, Qutub Minar, Meenakshi Temple — a UNESCO heritage treasury.</p>
+    </div>
+    <div class="div-tile div-tile-gold" style="animation-delay:0.8s">
+      <div class="tile-icon">🤝</div>
+      <h3>Motto</h3>
+      <p><strong style="color:var(--gold)">"Satyameva Jayate"</strong><br>Truth alone triumphs — India's national motto since 1950.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ SLIDE 10 ══════════════ -->
+<div class="slide" id="slide10">
+  <canvas class="fireworks-canvas" id="fireworksCanvas"></canvas>
+  <div class="pledge-wrap">
+    <h2 class="pledge-title">🇮🇳 Indian National Pledge</h2>
+    <div class="pledge-box">
+      <p>
+        "India is my country. All Indians are my brothers and sisters.<br>
+        I love my country, and I am proud of its rich and varied heritage.<br>
+        I shall always strive to be worthy of it.<br>
+        I shall give my parents, teachers, and all elders respect and treat everyone with courtesy.<br>
+        To my country and my people, I pledge my devotion.<br>
+        <strong style="color:var(--gold)">In their well-being and prosperity alone lies my happiness."</strong>
+      </p>
+    </div>
+    <p style="color:#aaa;font-size:13px;margin-bottom:14px;animation:fadeSlideUp 0.8s 0.4s both;opacity:0">Happy Independence Day in every language of India</p>
+    <div class="lang-badges">
+      <span class="lang-badge" style="animation-delay:0.2s">स्वतंत्रता दिवस की शुभकामनाएं</span>
+      <span class="lang-badge" style="animation-delay:0.3s">சுதந்திர தின வாழ்த்துக்கள்</span>
+      <span class="lang-badge" style="animation-delay:0.4s">স্বাধীনতা দিবসের শুভেচ্ছা</span>
+      <span class="lang-badge" style="animation-delay:0.5s">స్వాతంత్ర్య దిన శుభాకాంక్షలు</span>
+      <span class="lang-badge" style="animation-delay:0.6s">ਸੁਤੰਤਰਤਾ ਦਿਵਸ ਦੀਆਂ ਵਧਾਈਆਂ</span>
+      <span class="lang-badge" style="animation-delay:0.7s">സ്വാതന്ത്ര്യദിന ആശംസകൾ</span>
+    </div>
+    <div class="jai-hind">JAI HIND!</div>
+  </div>
+</div>
+
+</div><!-- end .presentation -->
+
+<!-- Navigation -->
+<div class="nav">
+  <button onclick="prevSlide()">◀ Prev</button>
+  <span class="slide-counter" id="slideCounter">1 / 11</span>
+  <button class="green-btn" onclick="nextSlide()">Next ▶</button>
+</div>
+
+<script>
+// ── MAP DRAWING ──
+// Real simplified geographic coordinates for the Indian subcontinent
+// Points are [longitude, latitude] from actual map data
+
+// Shared projection: map lon/lat to canvas pixels
+function project(lon, lat, cfg) {
+  const x = (lon - cfg.lonMin) / (cfg.lonMax - cfg.lonMin) * cfg.w;
+  const y = (1 - (lat - cfg.latMin) / (cfg.latMax - cfg.latMin)) * cfg.h;
+  return [x, y];
+}
+
+function drawPath(ctx, coords, cfg) {
+  ctx.beginPath();
+  const [sx, sy] = project(coords[0][0], coords[0][1], cfg);
+  ctx.moveTo(sx, sy);
+  for (let i = 1; i < coords.length; i++) {
+    const [px, py] = project(coords[i][0], coords[i][1], cfg);
+    ctx.lineTo(px, py);
+  }
+  ctx.closePath();
+}
+
+function label(ctx, text, lon, lat, cfg, color, size, bold) {
+  const [x, y] = project(lon, lat, cfg);
+  ctx.fillStyle = color || '#fff';
+  ctx.font = (bold ? 'bold ' : '') + (size || 11) + 'px Poppins,sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText(text, x, y);
+}
+
+function dot(ctx, lon, lat, cfg, color, r) {
+  const [x, y] = project(lon, lat, cfg);
+  ctx.beginPath();
+  ctx.arc(x, y, r || 4, 0, Math.PI * 2);
+  ctx.fillStyle = color || '#66ddff';
+  ctx.fill();
+}
+
+// Real outline of the undivided subcontinent (India + Pakistan + Bangladesh)
+// Traced from actual geographic boundaries
+const SUBCONTINENT = [
+  // Start NW Pakistan, go clockwise around entire subcontinent
+  [61.0,36.5],[62.5,36.8],[63.8,36.4],[64.8,37.1],[66.5,37.4],
+  [67.8,37.5],[69.3,37.2],[71.0,36.9],[72.8,37.1],[74.9,37.4],
+  [76.7,35.5],[77.8,35.7],[78.7,34.5],[79.0,33.0],[80.2,32.5],
+  [81.0,30.8],[82.7,30.1],[84.2,28.4],[85.9,27.9],[87.1,27.8],
+  [88.1,27.2],[89.5,27.0],[91.6,27.5],[92.7,27.2],[94.7,27.4],
+  [96.4,27.3],[97.4,28.4],[96.5,29.0],[95.6,28.6],[94.6,29.0],
+  [93.8,29.4],[92.6,29.8],[91.6,30.0],[90.5,28.5],[89.0,27.3],
+  [88.5,26.7],[88.2,26.0],[88.0,25.0],[89.0,24.0],[90.4,23.0],
+  [91.5,22.8],[92.3,23.6],[92.0,24.4],[91.7,25.1],[90.0,25.8],
+  [89.7,26.8],[89.0,26.3],[88.7,26.0],[87.9,26.4],[87.1,26.1],
+  [86.0,26.5],[84.6,27.0],[83.3,27.5],[82.0,27.5],[80.5,28.6],
+  [79.3,29.6],[78.0,30.4],[77.5,30.9],[76.5,31.4],[75.3,32.3],
+  [74.5,32.6],[73.9,33.1],[73.7,33.9],[74.1,34.7],[75.4,34.5],
+  [76.5,34.8],[77.5,35.5],[76.7,35.5],
+  // Go south along Pakistan east border back to start
+  [73.0,24.4],[71.0,22.5],[70.0,22.0],[68.8,23.5],[68.1,24.3],
+  [67.0,25.4],[66.5,26.5],[62.7,27.5],[61.7,28.7],[60.8,29.9],
+  [61.0,31.2],[60.8,33.3],[60.5,35.0],[61.0,36.5]
+];
+
+// India only (Republic, excludes Pakistan and Bangladesh)
+const INDIA_BODY = [
+  // NW border with Pakistan (post-partition)
+  [73.9,33.1],[74.1,34.7],[75.4,34.5],[76.5,34.8],[77.5,35.5],
+  [78.7,34.5],[79.0,33.0],[80.2,32.5],[81.0,30.8],[82.7,30.1],
+  [84.2,28.4],[85.9,27.9],[87.1,27.8],[88.1,27.2],[89.5,27.0],
+  [91.6,27.5],[92.7,27.2],[94.7,27.4],[96.4,27.3],[97.4,28.4],
+  [96.5,29.0],[95.6,28.6],[94.6,29.0],[93.8,29.4],[92.6,29.8],
+  [91.6,30.0],[90.5,28.5],[89.0,27.3],[88.5,26.7],[88.2,26.0],
+  [88.0,25.0],[89.0,24.0],[90.4,23.0],[91.5,22.8],[92.3,23.6],
+  [92.0,24.4],[91.7,25.1],[90.0,25.8],[88.7,26.0],[87.9,26.4],
+  [87.1,26.1],[86.0,26.5],[84.6,27.0],[83.3,27.5],[82.0,27.5],
+  [80.5,28.6],[79.3,29.6],[78.0,30.4],[77.5,30.9],[76.5,31.4],
+  [75.3,32.3],[74.5,32.6],[73.9,33.1],
+  // South down east coast
+  [80.2,32.5],[80.1,14.1],[80.3,13.1],[80.0,12.0],[79.9,11.0],
+  [79.6,10.0],[79.0,9.3],[78.2,8.6],[77.4,8.2],[76.6,8.4],
+  [76.3,9.3],[75.5,10.0],[75.0,10.8],[74.5,11.8],[73.9,13.0],
+  [73.5,14.7],[73.1,16.0],[72.9,17.5],[72.7,19.8],[72.5,21.6],
+  [71.0,22.5],[70.2,22.8],[69.5,22.0],[68.8,23.5],[68.1,24.3],
+  [67.0,25.4],[66.5,26.5],[70.2,27.9],[71.9,28.3],[73.0,28.5],
+  [74.5,29.5],[75.0,30.4],[75.3,32.3],[73.9,33.1]
+];
+
+// Pakistan region (to show in "then" map)
+const PAKISTAN = [
+  [61.0,36.5],[66.5,37.4],[69.3,37.2],[72.8,37.1],[74.9,37.4],
+  [76.7,35.5],[75.4,34.5],[74.1,34.7],[73.9,33.1],[74.5,32.6],
+  [75.3,32.3],[75.0,30.4],[73.0,28.5],[71.9,28.3],[70.2,27.9],
+  [66.5,26.5],[67.0,25.4],[68.1,24.3],[68.8,23.5],[69.5,22.0],
+  [70.2,22.8],[71.0,22.5],[68.8,23.5],[68.1,24.3],[67.0,25.4],
+  [62.7,27.5],[61.7,28.7],[60.8,29.9],[61.0,31.2],[60.8,33.3],
+  [60.5,35.0],[61.0,36.5]
+];
+
+// Bangladesh region
+const BANGLADESH = [
+  [88.0,25.0],[89.0,24.0],[90.4,23.0],[91.5,22.8],[92.3,23.6],
+  [92.0,24.4],[91.7,25.1],[90.0,25.8],[88.7,26.0],[88.0,25.0]
+];
+
+// Sri Lanka
+const SRI_LANKA = [
+  [80.0,9.8],[80.5,9.0],[81.5,8.4],[81.9,8.1],[81.8,7.5],
+  [81.5,6.9],[80.8,6.1],[80.1,6.2],[79.7,7.0],[79.6,7.8],
+  [79.7,8.6],[80.0,9.8]
+];
+
+function drawMap(canvasId, mode) {
+  const canvas = document.getElementById(canvasId);
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+
+  // Projection config — covers subcontinent + Sri Lanka
+  const cfg = { lonMin: 60, lonMax: 98, latMin: 6, latMax: 38, w: W, h: H };
+
+  // Ocean background
+  ctx.fillStyle = '#0d2137';
+  ctx.fillRect(0, 0, W, H);
+
+  if (mode === 'then') {
+    // Draw West Pakistan (orange-red)
+    drawPath(ctx, PAKISTAN, cfg);
+    ctx.fillStyle = '#c8603a';
+    ctx.strokeStyle = '#a04020';
+    ctx.lineWidth = 1;
+    ctx.fill(); ctx.stroke();
+
+    // Draw Bangladesh (orange-red)
+    drawPath(ctx, BANGLADESH, cfg);
+    ctx.fillStyle = '#c8603a';
+    ctx.fill(); ctx.stroke();
+
+    // Draw main India body (tan)
+    drawPath(ctx, INDIA_BODY, cfg);
+    ctx.fillStyle = '#b8956e';
+    ctx.strokeStyle = '#8B6914';
+    ctx.lineWidth = 1.2;
+    ctx.fill(); ctx.stroke();
+
+    // Princely state dots
+    [[78,22],[76,21],[80,20],[82,19],[77,18],[75,16],[79,17],[81,24],[72,23]].forEach(([lo,la]) => {
+      dot(ctx, lo, la, cfg, '#FFD700', 3);
+    });
+
+    // Sri Lanka
+    drawPath(ctx, SRI_LANKA, cfg);
+    ctx.fillStyle = '#8a7050';
+    ctx.strokeStyle = '#6b5530';
+    ctx.lineWidth = 1;
+    ctx.fill(); ctx.stroke();
+
+    // Labels
+    label(ctx, 'British India', 80, 21, cfg, '#ffffff', 12, true);
+    label(ctx, '(Undivided)', 80, 19.5, cfg, '#ffe0bb', 10, false);
+    label(ctx, 'W.Pakistan', 68, 29, cfg, '#ffe0cc', 9, false);
+    label(ctx, 'E.Bengal', 90.5, 24, cfg, '#ffe0cc', 8, false);
+    label(ctx, 'Ceylon', 80.9, 8.2, cfg, '#dddddd', 8, false);
+    label(ctx, '● 562 Princely States', 80, 15, cfg, '#FFD700', 9, false);
+
+    // Partition dashed line hint
+    ctx.setLineDash([4, 3]);
+    ctx.strokeStyle = '#ff5555';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    const [x1,y1] = project(73.9,33.1,cfg), [x2,y2] = project(67,25.4,cfg);
+    ctx.moveTo(x1,y1); ctx.lineTo(x2,y2);
+    ctx.stroke();
+    const [x3,y3] = project(88,25,cfg), [x4,y4] = project(92.3,23.6,cfg);
+    ctx.moveTo(x3,y3); ctx.lineTo(x4,y4);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+  } else {
+    // ── NOW map ──
+    // Pakistan (faded)
+    drawPath(ctx, PAKISTAN, cfg);
+    ctx.fillStyle = '#1a2e1a';
+    ctx.strokeStyle = '#2a4a2a';
+    ctx.lineWidth = 1;
+    ctx.fill(); ctx.stroke();
+    label(ctx, 'Pakistan', 68, 29, cfg, '#5a8a5a', 8, false);
+
+    // Bangladesh (faded)
+    drawPath(ctx, BANGLADESH, cfg);
+    ctx.fillStyle = '#1a2e1a';
+    ctx.fill(); ctx.stroke();
+    label(ctx, 'Bangladesh', 90.5, 24, cfg, '#5a8a5a', 7.5, false);
+
+    // India body (saffron)
+    drawPath(ctx, INDIA_BODY, cfg);
+    ctx.fillStyle = '#e07a1a';
+    ctx.strokeStyle = '#cc5500';
+    ctx.lineWidth = 1.5;
+    ctx.fill(); ctx.stroke();
+
+    // Sri Lanka
+    drawPath(ctx, SRI_LANKA, cfg);
+    ctx.fillStyle = '#1e3a5a';
+    ctx.strokeStyle = '#2255aa';
+    ctx.lineWidth = 1;
+    ctx.fill(); ctx.stroke();
+    label(ctx, 'Sri Lanka', 80.9, 8.0, cfg, '#aac8ff', 8, false);
+
+    // New Delhi star
+    const [dx,dy] = project(77.2, 28.6, cfg);
+    ctx.fillStyle = '#FFD700';
+    ctx.font = 'bold 14px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('★', dx, dy);
+    label(ctx, 'New Delhi', 79.5, 28.6, cfg, '#FFD700', 9, true);
+
+    // Cities
+    dot(ctx, 72.8, 19.0, cfg, '#66ddff', 4);
+    label(ctx, 'Mumbai', 71.2, 19.0, cfg, '#aaeeff', 8, false);
+    dot(ctx, 80.3, 13.1, cfg, '#66ddff', 4);
+    label(ctx, 'Chennai', 81.8, 13.0, cfg, '#aaeeff', 8, false);
+    dot(ctx, 88.4, 22.6, cfg, '#66ddff', 4);
+    label(ctx, 'Kolkata', 88.4, 23.5, cfg, '#aaeeff', 8, false);
+
+    // Andaman
+    dot(ctx, 92.7, 12.5, cfg, '#e07a1a', 4);
+    dot(ctx, 93.0, 11.5, cfg, '#e07a1a', 3.5);
+    label(ctx, 'A&N Is.', 94.2, 12, cfg, '#ffddaa', 7.5, false);
+
+    // India label
+    label(ctx, 'India', 80, 21, cfg, '#ffffff', 13, true);
+    label(ctx, '28 States · 8 UTs', 80, 19.5, cfg, '#ffe0bb', 10, false);
+  }
+}
+
+// ── STATE ──
+let current = 0;
+const slides = document.querySelectorAll('.slide');
+const total = slides.length;
+
+// ── NAVIGATION ──
+function showSlide(n) {
+  slides[current].classList.remove('active');
+  current = (n + total) % total;
+  slides[current].classList.add('active');
+  document.getElementById('slideCounter').textContent = (current + 1) + ' / ' + total;
+  document.getElementById('progressBar').style.width = ((current + 1) / total * 100) + '%';
+  onSlideEnter(current);
+}
+
+function nextSlide() { showSlide(current + 1); }
+function prevSlide() { showSlide(current - 1); }
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') nextSlide();
+  if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   prevSlide();
+});
+
+// ── CONFETTI (Slide 1) ──
+function buildConfetti() {
+  const container = document.getElementById('confetti');
+  const colors = ['#FF9933','#FFFFFF','#138808','#FFD700','#FF6600','#00AA44'];
+  for (let i = 0; i < 60; i++) {
+    const el = document.createElement('div');
+    el.className = 'confetti-piece';
+    el.style.cssText = `
+      left:${Math.random()*100}%;
+      background:${colors[Math.floor(Math.random()*colors.length)]};
+      width:${6+Math.random()*10}px;
+      height:${8+Math.random()*14}px;
+      animation-duration:${3+Math.random()*4}s;
+      animation-delay:${Math.random()*3}s;
+      opacity:${0.6+Math.random()*0.4};
+    `;
+    container.appendChild(el);
+  }
+}
+buildConfetti();
+
+// ── STARS (Slide 4) ──
+function buildStars() {
+  const container = document.getElementById('speechStars');
+  for (let i = 0; i < 80; i++) {
+    const s = document.createElement('div');
+    s.className = 'star';
+    const size = Math.random() * 3 + 1;
+    s.style.cssText = `
+      left:${Math.random()*100}%;
+      top:${Math.random()*100}%;
+      width:${size}px;
+      height:${size}px;
+      animation-duration:${1.5+Math.random()*3}s;
+      animation-delay:${Math.random()*3}s;
+    `;
+    container.appendChild(s);
+  }
+}
+buildStars();
+
+// ── FIREWORKS (Slide 10) ──
+const fwCanvas = document.getElementById('fireworksCanvas');
+const ctx = fwCanvas.getContext('2d');
+let fwAnimId = null;
+const particles = [];
+
+function resizeCanvas() {
+  fwCanvas.width = window.innerWidth;
+  fwCanvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+function createFirework(x, y) {
+  const colors = ['#FF9933','#FFD700','#FFFFFF','#138808','#FF6699','#66CCFF','#FF4444'];
+  const color = colors[Math.floor(Math.random() * colors.length)];
+  for (let i = 0; i < 60; i++) {
+    const angle = (Math.PI * 2 / 60) * i;
+    const speed = 2 + Math.random() * 4;
+    particles.push({
+      x, y,
+      vx: Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed,
+      alpha: 1,
+      color,
+      size: 2 + Math.random() * 2,
+    });
+  }
+}
+
+function animateFireworks() {
+  ctx.fillStyle = 'rgba(0,0,0,0.15)';
+  ctx.fillRect(0, 0, fwCanvas.width, fwCanvas.height);
+  for (let i = particles.length - 1; i >= 0; i--) {
+    const p = particles[i];
+    p.x += p.vx;
+    p.y += p.vy;
+    p.vy += 0.06;
+    p.alpha -= 0.015;
+    if (p.alpha <= 0) { particles.splice(i, 1); continue; }
+    ctx.save();
+    ctx.globalAlpha = p.alpha;
+    ctx.fillStyle = p.color;
+    ctx.shadowColor = p.color;
+    ctx.shadowBlur = 6;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+  fwAnimId = requestAnimationFrame(animateFireworks);
+}
+
+let fwInterval = null;
+
+function startFireworks() {
+  if (fwAnimId) return;
+  animateFireworks();
+  fwInterval = setInterval(() => {
+    createFirework(
+      fwCanvas.width * (0.2 + Math.random() * 0.6),
+      fwCanvas.height * (0.1 + Math.random() * 0.5)
+    );
+  }, 600);
+}
+
+function stopFireworks() {
+  if (fwAnimId) { cancelAnimationFrame(fwAnimId); fwAnimId = null; }
+  if (fwInterval) { clearInterval(fwInterval); fwInterval = null; }
+  ctx.clearRect(0, 0, fwCanvas.width, fwCanvas.height);
+  particles.length = 0;
+}
+
+// ── PER-SLIDE ENTER HOOKS ──
+function onSlideEnter(n) {
+  if (n === 9) { startFireworks(); }
+  else { stopFireworks(); }
+}
+
+// ── INIT ──
+document.getElementById('progressBar').style.width = (1 / total * 100) + '%';
+onSlideEnter(0);
+</script>
+</body>
+</html>
